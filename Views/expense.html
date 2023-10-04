@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPENSE TRACKER</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>#sbmt{
+      color: white;
+      background-color: blue;   
+  }
+  .container{
+      background-color: gray;
+      margin-top: 4cm;
+      width: 15cm;
+      height: 8cm;
+  }
+  body{
+     background-image: url(th.jpg);
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }</style>
+</head>
+<body>
+  <div class="container" id="adform">
+   <div style=" color: aliceblue; text-align: center; background-color: crimson;"> <h2>EXPENSE TRACKER</h2></div>
+    
+    <form  action="/expense/postdata" method="post">
+      <div>
+    <label for="expamount"><b>Choose Expense Amount:</b></label>
+   <input type="number" id="expamount" name="price" class="form-control" placeholder="eg 100" required>
+     </div>
+     <div>
+      <label for="desc"><b>Choose Description:</b></label>
+     <input type="text" id="desc" name="desc" class="form-control"  placeholder="eg party" required>
+    </div>
+    
+      <div>
+        <label for="selectitem"><b>Choose Reason:</b></label>
+      <select  id="selectitem" name="reason" class="form-control" required>
+        <option value="">Select Here</option>
+        <option value="FUEL">FUEL</option>
+        <option value="FOOD">FOOD</option>
+        <option value="ELECTRICITY">ELECTRICITY</option>
+        <option value="MOVIE">MOVIE</option>
+      </select>
+    </div>
+     
+   <input type="submit" value="Add Expense" class="form-control" id="sbmt">
+     
+    </form>
+    
+
+  </div>
+  
+  <div style="max-height: 5cm; background-color: aliceblue;" class="container">
+    <h4> <b>Expenses List:</b></h4>
+    <ul id="unlist" class="list-group li" onclick="deletedata(event)" ondblclick="editdata(event)" >
+      <!-- <li class="list">100-Movie-OnVacation <button class="btn-danger delete">Delete Expense</button>  <button class="btn-primary edit">Edit Expense</button></li> -->
+    
+
+    </ul>
+  </div>
+   
+  <script src="/index.js"></script>
+</body>
+</html>
